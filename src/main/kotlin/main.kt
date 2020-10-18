@@ -39,6 +39,19 @@ fun main(){
     printEquation(2.0){x->exp(x)}
     checkEquation(2.0,7.38,0.01){x->exp(x)}
 
+    exampleWhen()
+}
+
+fun exampleWhen(){
+    val x = 2
+
+    when(x){
+        1->println("x wynosi 1")
+        2,3 -> println("x wynosi 2 lub 3")
+        in 5..10-> println("x zawiera sie w przedziale 5,10")
+        else-> println("inna wartosc")
+    }
+
 
 }
 
