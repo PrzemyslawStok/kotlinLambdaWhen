@@ -15,6 +15,8 @@ fun main(){
     println(math(2,4,add))
     println(math(2,4,sub))
 
+    println(math(2,5){a,b->a*b})
+
     val equation = {x:Double->x-exp(-x)}
 
     val div:(Int,Int)->Double = {x:Int,y:Int->x/y.toDouble()}
