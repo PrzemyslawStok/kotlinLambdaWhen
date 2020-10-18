@@ -1,5 +1,4 @@
-import java.lang.Math.abs
-import java.lang.Math.exp
+import java.lang.Math.*
 
 fun main(){
     printA(5)
@@ -36,6 +35,10 @@ fun main(){
 
     checkEquation(2.0,5.0,0.001){5.001}
     checkEquation(2.0,3.0,0.01){x->x+1}
+
+    printEquation(2.0){x->exp(x)}
+    checkEquation(2.0,7.38,0.01){x->exp(x)}
+
 }
 
 fun add1(a: Int, b: Int):Int{
