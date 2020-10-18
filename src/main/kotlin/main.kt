@@ -34,10 +34,8 @@ fun main(){
     printEquation(2.0,equation)
     printEquation(2.0){x->x+1}
 
-    checkEquation(2.0,5.0){5.001}
-    checkEquation(2.0,3.0){x->x+1}
-
-    println(exp(5.0)-148.41315)
+    checkEquation(2.0,5.0,0.001){5.001}
+    checkEquation(2.0,3.0,0.01){x->x+1}
 }
 
 fun add1(a: Int, b: Int):Int{
@@ -55,13 +53,13 @@ fun printEquation(x: Double, equation: (Double)->Double){
     println("x=${x} , wynik ${result}")
 }
 
-fun checkEquation(x: Double, y:Double, f: (Double)->Double){
+fun checkEquation(x: Double, y:Double,accuracy: Double, f: (Double)->Double){
     //y powinno być równe f(x) albo wieksze od epsilon
     //epsilon = 0.00001
 
-    if(abs(y-f(x))<0.00001)
-        println("Wynik się zgadza")
+    if(abs(y-f(x))<accuracy)
+        println("Wynik zgadza się: ${abs(y-f(x))} < ${accuracy}")
     else
-        println("Wynik nie zgadza się: ${abs(y-f(x))} > 0.00001")
+        println("Wynik nie zgadza się: ${abs(y-f(x))} > ${accuracy}")
 
 }
