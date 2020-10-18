@@ -6,14 +6,18 @@ fun main(){
 
     val array = listOf(1,2,3,4,5,6,7,8,9,10)
     val square = {x:Int->x*x}
+    val add = {a:Int,b:Int->a+b}
 
     println("kwadrat wynosi: ${square(5)}")
+    println("suma wynosi ${add(2,5)}")
 
     println(array)
     println(array.map(square))
+    println(array.map{x:Int->x*x})
+    println(array.map{it*it})
 }
 
-fun add(a: Int, b: Int):Int{
+fun add1(a: Int, b: Int):Int{
     return a+b
 }
 
