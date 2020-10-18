@@ -34,6 +34,9 @@ fun main(){
     printEquation(2.0,equation)
     printEquation(2.0){x->x+1}
 
+    checkEquation(2.0,5.0){5.001}
+    checkEquation(2.0,3.0){x->x+1}
+
     println(exp(5.0)-148.41315)
 }
 
@@ -56,7 +59,9 @@ fun checkEquation(x: Double, y:Double, f: (Double)->Double){
     //y powinno być równe f(x) albo wieksze od epsilon
     //epsilon = 0.00001
 
-    abs(y-f(x))>0.00001
-
+    if(abs(y-f(x))<0.00001)
+        println("Wynik się zgadza")
+    else
+        println("Wynik nie zgadza się: ${abs(y-f(x))} > 0.00001")
 
 }
