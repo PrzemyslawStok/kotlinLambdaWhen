@@ -5,12 +5,12 @@ fun main(){
     //4x+sin(x) = 0
 
     val array = listOf(1,2,3,4,5,6,7,8,9,10)
+    val square = {x:Int->x*x}
 
-    val square = {x:Double->x*x}
-    println("kwadrat wynosi: ${square(5.0)}")
+    println("kwadrat wynosi: ${square(5)}")
 
-    //println(array)
-    //println(array.map{it*it})
+    println(array)
+    println(array.map(square))
 }
 
 fun add(a: Int, b: Int):Int{
