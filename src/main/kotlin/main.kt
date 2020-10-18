@@ -11,6 +11,10 @@ fun main(){
 
     val add = {a:Int,b:Int->a+b}
     val sub = {a:Int,b:Int->a-b}
+
+    println(math(2,4,add))
+    println(math(2,4,sub))
+
     val equation = {x:Double->x-exp(-x)}
 
     val div:(Int,Int)->Double = {x:Int,y:Int->x/y.toDouble()}
@@ -31,6 +35,6 @@ fun add1(a: Int, b: Int):Int{
 
 fun printA(a: Int) = println("Wartość wynosi ${a}")
 
-fun math(a:Int, b:Int):Double{
-    return 0.0
+fun math(a:Int, b:Int,f:(Int,Int)->Int):Int{
+    return f(a,b)
 }
