@@ -1,3 +1,4 @@
+import java.lang.Math.abs
 import java.lang.Math.exp
 
 fun main(){
@@ -32,6 +33,8 @@ fun main(){
 
     printEquation(2.0,equation)
     printEquation(2.0){x->x+1}
+
+    println(exp(5.0)-148.41315)
 }
 
 fun add1(a: Int, b: Int):Int{
@@ -47,4 +50,13 @@ fun math(a:Int, b:Int,f:(Int,Int)->Int):Int{
 fun printEquation(x: Double, equation: (Double)->Double){
     val result = equation(x)
     println("x=${x} , wynik ${result}")
+}
+
+fun checkEquation(x: Double, y:Double, f: (Double)->Double){
+    //y powinno być równe f(x) albo wieksze od epsilon
+    //epsilon = 0.00001
+
+    abs(y-f(x))>0.00001
+
+
 }
