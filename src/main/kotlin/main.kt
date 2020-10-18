@@ -6,8 +6,11 @@ fun main(){
 
     val array = listOf(1,2,3,4,5,6,7,8,9,10)
 
-    println(array)
-    println(array.map{it*it})
+    val square = {x:Double->x*x}
+    println("kwadrat wynosi: ${square(5.0)}")
+
+    //println(array)
+    //println(array.map{it*it})
 }
 
 fun add(a: Int, b: Int):Int{
