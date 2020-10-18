@@ -17,8 +17,6 @@ fun main(){
 
     println(math(2,5){a,b->a*b})
 
-    val equation = {x:Double->x-exp(-x)}
-
     val div:(Int,Int)->Double = {x:Int,y:Int->x/y.toDouble()}
 
     println("kwadrat wynosi: ${square(5)}")
@@ -29,6 +27,11 @@ fun main(){
     println(array.map(square))
     println(array.map{x:Int->x*x})
     println(array.map{it*it})
+
+    val equation = {x:Double->x-exp(-x)}
+
+    printEquation(2.0,equation)
+    printEquation(2.0){x->x+1}
 }
 
 fun add1(a: Int, b: Int):Int{
@@ -39,4 +42,9 @@ fun printA(a: Int) = println("Wartość wynosi ${a}")
 
 fun math(a:Int, b:Int,f:(Int,Int)->Int):Int{
     return f(a,b)
+}
+
+fun printEquation(x: Double, equation: (Double)->Double){
+    val result = equation(x)
+    println("x=${x} , wynik ${result}")
 }
