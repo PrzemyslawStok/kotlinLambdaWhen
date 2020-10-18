@@ -7,7 +7,7 @@ fun main(){
     //4x+sin(x) = 0
 
     val array = listOf(1,2,3,4,5,6,7,8,9,10)
-    var square:(Int)->Int = {x:Int->x*x}
+    val square:(Int)->Int = {x:Int->x*x}
 
     val add = {a:Int,b:Int->a+b}
     val sub = {a:Int,b:Int->a-b}
