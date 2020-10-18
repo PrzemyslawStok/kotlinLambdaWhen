@@ -39,6 +39,7 @@ fun main(){
     printEquation(2.0){x->exp(x)}
     checkEquation(2.0,7.38,0.01){x->exp(x)}
 
+
 }
 
 fun add1(a: Int, b: Int):Int{
